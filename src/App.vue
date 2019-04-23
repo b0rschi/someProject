@@ -22,18 +22,22 @@ import todoItem from './components/todoItem.vue'
 
 export default {
   name: 'app',
+  
   data(){
     return {
-    todoList: [
-          {id: 1, title: 'Добавить функций в todoList'}
-        ],
         todoAddText: '',
         todoNextIndex: 2
     }
   },
+  computed: {
+    todoList(){
+      return this.$store.getters.TODOS
+    }
+  },
     methods:{
         todoAddTask: function(){
-          this.todoList.push({
+          this.$store.dispatch('SAVE_TODO',
+          {
             id: this.todoNextIndex++,
             title: this.todoAddText
           });
