@@ -1,8 +1,12 @@
 <template>
-  <li>
-    {{title}}
-    <button v-on:click="$emit('remove')"> удалить задачу</button>
-  </li>
+  <v-card class='mx-3 mb-3' min-width='310px' dark>
+  	<v-card-title primary-title>
+  		<div>{{title}}</div>
+  	</v-card-title>
+    <v-card-actions>
+    	<v-btn small color='info' v-on:click="$emit('remove')"> удалить</v-btn>
+	</v-card-actions>
+  </v-card>
 </template>
 
 <script>
