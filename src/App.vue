@@ -14,20 +14,21 @@
         
           <v-container >
           
-            <v-flex xs10 offset-xs1>
+            
               
             <form v-on:submit.prevent='todoAddTask'>
-              <v-layout wrap>
-                <v-text-field 
-                    label="Текст новой задачи"
-                    single-line
-                    v-model='todoAddText'></v-text-field>
-                
-             <v-btn type='submit' color='success' large >Добавить задачу</v-btn>
+              <v-layout row wrap>
+                <v-flex xs12 md8 offset-xs1>
+                  <v-text-field 
+                      label="Текст новой задачи"
+                      single-line
+                      v-model='todoAddText'></v-text-field>
+                </v-flex>
+             <v-btn type='submit' color='success'  >Добавить задачу</v-btn>
              </v-layout>
             </form>
 
-          </v-flex>
+          
           
           
           </v-container>
