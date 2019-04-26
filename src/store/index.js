@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
 	state: {
 		todos: [
-			{id: 1, title: 'Список из store'}
+			{id: 1, title: 'Список из store'},
+			{id: 2, title: 'Ещё одно задание из store'}
 		]
 	},
 	getters: {

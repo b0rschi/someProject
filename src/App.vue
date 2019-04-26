@@ -13,23 +13,27 @@
       <v-layout column justify-space-around>
         
           <v-container >
-          <v-layout wrap>
-            <v-flex xs8 offset-xs1>
-            <form v-on:submit.prevent=''>
+          
+            <v-flex xs10 offset-xs1>
+              
+            <form v-on:submit.prevent='todoAddTask'>
+              <v-layout wrap>
                 <v-text-field 
                     label="Текст новой задачи"
                     single-line
                     v-model='todoAddText'></v-text-field>
                 
-              
+             <v-btn type='submit' color='success' large >Добавить задачу</v-btn>
+             </v-layout>
             </form>
+
           </v-flex>
-            <v-btn color='success' large @click='todoAddTask'>Добавить задачу</v-btn>
-          </v-layout>
+          
+          
           </v-container>
         
 
-        <v-layout   row fill-height wrap>
+        <v-layout   row fill-height wrap >
           <todo-item
             v-for='(todo, index) in todoList'
             v-bind:key='todo.id'
@@ -54,7 +58,7 @@ export default {
   data(){
     return {
         todoAddText: '',
-        todoNextIndex: 2
+        todoNextIndex: 3
     }
   },
   computed: {
